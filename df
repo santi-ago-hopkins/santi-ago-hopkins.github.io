@@ -1,0 +1,20 @@
+[33m77aa7dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32msource[m[33m, [m[1;31morigin/source[m[33m)[m HEAD@{0}: commit: basic homepage
+[33m4f362bb[m HEAD@{1}: reset: moving to origin/source
+[33m4f362bb[m HEAD@{2}: reset: moving to HEAD
+[33m4f362bb[m HEAD@{3}: reset: moving to HEAD
+[33m4f362bb[m HEAD@{4}: pull origin source: Fast-forward
+[33m5c5c7ce[m HEAD@{5}: commit: ?
+[33mc3ab19c[m HEAD@{6}: commit: changed deploy command
+[33mafa1933[m HEAD@{7}: pull origin main: Merge made by the 'ort' strategy.
+[33m4a18759[m HEAD@{8}: commit: removed workflow
+[33m4c5fc1c[m HEAD@{9}: commit: gh-pages
+[33mc620f97[m HEAD@{10}: pull origin main: Merge made by the 'ort' strategy.
+[33ma419e23[m HEAD@{11}: commit: gh pages, deploy script
+[33m171dc31[m[33m ([m[1;32mmain[m[33m)[m HEAD@{12}: reset: moving to 171dc31ecbfbadc96ac9400a1a66c9f5988f1152
+[33mdc9fe9a[m HEAD@{13}: commit (merge): conflict
+[33me8f5315[m HEAD@{14}: commit (merge): resolve conflict
+[33ma3cf3eb[m HEAD@{15}: merge origin/main: Merge made by the 'ort' strategy.
+[33me90c3b6[m HEAD@{16}: commit: gh-pages
+[33m171dc31[m[33m ([m[1;32mmain[m[33m)[m HEAD@{17}: checkout: moving from main to source
+[33m171dc31[m[33m ([m[1;32mmain[m[33m)[m HEAD@{18}: commit: batman
+[33m557b32b[m HEAD@{19}: clone: from https://github.com/santi-ago-hopkins/santi-ago-hopkins.github.io.git
