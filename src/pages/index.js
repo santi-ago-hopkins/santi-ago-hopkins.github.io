@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import '../fonts/fonts.css';
+import FlippingText from '../components/FlippingText';
 
 export default function Home() {
   const [expandedPdf, setExpandedPdf] = useState(null);
+  const [titleComplete, setTitleComplete] = useState(false);
 
   const toggleExpand = (pdfName) => {
     setExpandedPdf(expandedPdf === pdfName ? null : pdfName);
@@ -18,7 +21,7 @@ export default function Home() {
     >
       <h2 style={{ 
         textAlign: 'center', 
-        fontFamily: 'Montserrat, sans-serif',
+        fontFamily: 'soda_shake',
         fontWeight: 300,
         fontSize: '1.2rem',
       }}>
@@ -48,21 +51,43 @@ export default function Home() {
   );
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-      {/* Title */}
+    <div style={{ 
+      display: 'flex',  
+      flexDirection: 'column',
+      height: '100vh', 
+      width: '100vw', 
+      backgroundColor: 'white'
+    }}>
       <div style={{
-        fontSize: '1.7rem',
-        color: 'black',
-        backgroundColor: '#add8e6',
-        borderRadius: '8px',
-        padding: '15px',
-        textAlign: 'left',
-        fontFamily: 'Montserrat, sans-serif',
-        width: '97%',
-        fontWeight: 400,
-        marginBottom: '20px',
+        marginTop: '40vh',
+        marginBottom: '60vh',
+        marginLeft: '10vw',  // Offset to the left
       }}>
-        Santiago Hopkins
+        <FlippingText 
+          text="Santiago Hopkins"
+          style={{
+            fontSize: '6.5rem',
+            color: 'black',
+            fontFamily: 'soda_shake',
+            fontWeight: 400,
+            textAlign: 'left',
+          }}
+          onComplete={() => setTitleComplete(true)}
+        />
+        <FlippingText 
+          text="a mechanical engineer and programmer making a difference in urban mobility"
+          delay={titleComplete ? 0 : 1500}  // Start after title if it's complete, otherwise wait 1.5s
+          highlightWords={['mechanical', 'engineer', 'programmer', 'urban', 'mobility']}
+          style={{
+            fontSize: '1.5rem',
+            color: '#333',
+            fontFamily: 'Montserrat, sans-serif',
+            marginTop: '1rem',
+            textAlign: 'left',
+            lineHeight: '1.5',
+          }}
+          onComplete={() => {/* You can add a function here if needed */}}
+        />
       </div>
 
       {/* Container for Resume and Portfolio */}

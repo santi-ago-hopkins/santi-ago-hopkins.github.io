@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'soda_shake';
+    src: url('orange juice 2.0.ttf') format('opentype'),
+  }
+
+@keyframes flipIn {
+0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+}
+100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+}

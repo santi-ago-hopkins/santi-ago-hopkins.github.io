@@ -1,0 +1,25 @@
+.flipping-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 4rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .letter {
+    display: inline-block;
+    animation: flipIn 0.5s ease-out;
+  }
+  
+  @keyframes flipIn {
+    0% {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  
