@@ -32,7 +32,7 @@ export default function Home() {
         <FlippingText 
           text="a mechanical engineer and programmer making a difference in urban mobility"
           delay={titleComplete ? 0 : 1500}
-          highlightWords={['mechanical', 'engineer', 'programmer', 'urban', 'mobility']}
+          highlightWords={['mechanical engineer', 'programmer', 'urban mobility']}
           style={{
             fontSize: '1.5rem',
             color: '#333',

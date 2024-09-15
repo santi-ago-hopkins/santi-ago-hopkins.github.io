@@ -16,10 +16,8 @@ const FlippingText = ({ text, style, onComplete, highlightWords = [], delay = 0 
           return newText;
         });
       }
-      // Signal completion after a short delay
       setTimeout(() => {
         onComplete();
-        // Apply highlighting 0.75 seconds after completion
         setTimeout(() => setIsHighlighted(true), 750);
       }, 500);
     };
@@ -28,49 +26,75 @@ const FlippingText = ({ text, style, onComplete, highlightWords = [], delay = 0 
   }, [text, onComplete, delay]);
 
   const renderText = () => {
-    const words = text.split(' ');
-    let letterIndex = 0;
+    const highlightRanges = [];
+    highlightWords.forEach(phrase => {
+      let startIndex = text.toLowerCase().indexOf(phrase.toLowerCase());
+      while (startIndex !== -1) {
+        highlightRanges.push({
+          start: startIndex,
+          end: startIndex + phrase.length
+        });
+        startIndex = text.toLowerCase().indexOf(phrase.toLowerCase(), startIndex + 1);
+      }
+    });
 
-    return words.map((word, wordIndex) => {
-      const shouldHighlight = highlightWords.some(hw => 
-        word.toLowerCase().includes(hw.toLowerCase())
-      );
+    highlightRanges.sort((a, b) => a.start - b.start);
 
-      const wordSpan = (
-        <span
-          key={wordIndex}
-          style={{
-            backgroundColor: isHighlighted && shouldHighlight ? '#55aaff' : 'transparent',
-            color: isHighlighted && shouldHighlight ? 'white' : 'inherit',
-            padding: isHighlighted && shouldHighlight ? '0 4px' : '0',
-            margin: isHighlighted && shouldHighlight ? '0 2px' : '0',
-            borderRadius: isHighlighted && shouldHighlight ? '3px' : '0',
-            transition: 'all 0.5s ease',
-            display: 'inline-block',
-          }}
-        >
-          {word.split('').map((letter, index) => (
+    let currentHighlight = null;
+    const elements = [];
+
+    for (let i = 0; i < text.length; i++) {
+      if (!currentHighlight && highlightRanges.some(range => range.start === i)) {
+        currentHighlight = highlightRanges.find(range => range.start === i);
+      }
+
+      if (currentHighlight && i >= currentHighlight.start && i < currentHighlight.end) {
+        if (i === currentHighlight.start) {
+          elements.push(
             <span
-              key={letterIndex + index}
+              key={`highlight-${i}`}
               style={{
+                backgroundColor: isHighlighted ? '#55aaff' : 'transparent',
+                color: isHighlighted ? 'white' : 'inherit',
+                padding: isHighlighted ? '0 4px' : '0',
+                margin: isHighlighted ? '0 2px' : '0',
+                borderRadius: '3px',
+                transition: 'all 0.5s ease',
                 display: 'inline-block',
-                animation: 'flipIn 0.5s ease-out',
               }}
             >
-              {displayText[letterIndex + index] === ' ' ? '\u00A0' : displayText[letterIndex + index]}
+              {displayText.slice(currentHighlight.start, currentHighlight.end).map((char, index) => (
+                <span
+                  key={`highlight-char-${index}`}
+                  style={{
+                    display: 'inline-block',
+                    animation: 'flipIn 0.5s ease-out',
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
             </span>
-          ))}
-        </span>
-      );
+          );
+          i = currentHighlight.end - 1; // Skip to the end of the highlight
+          currentHighlight = null;
+        }
+      } else {
+        elements.push(
+          <span
+            key={`char-${i}`}
+            style={{
+              display: 'inline-block',
+              animation: 'flipIn 0.5s ease-out',
+            }}
+          >
+            {displayText[i] === ' ' ? '\u00A0' : displayText[i]}
+          </span>
+        );
+      }
+    }
 
-      letterIndex += word.length + 1; // +1 for the space
-      return (
-        <React.Fragment key={`word-${wordIndex}`}>
-          {wordSpan}
-          {wordIndex < words.length - 1 && ' '}
-        </React.Fragment>
-      );
-    });
+    return elements;
   };
 
   return (
