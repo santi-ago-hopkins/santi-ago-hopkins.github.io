@@ -1,10 +1,10 @@
 import React from 'react';
-import image1 from '../../public/images/image2.jpeg';  
-import image3 from '../../public/images/image2.png';  
-import ksImage1 from '../../public/images/ksw1.png';
-import ksImage2 from '../../public/images/ksw2.png';
-import proj1 from '../../public/images/proj1.png';
-import proj2 from '../../public/images/windTurbine.png';
+import image1 from '../src/images/image2.jpeg';  
+import image3 from '../src/images/image2.png';  
+import ksImage1 from '../src/images/ksw1.png';
+import ksImage2 from '../src/images/ksw2.png';
+import proj1 from '../src/images/proj1.png';
+import proj2 from '../src/images/windTurbine.png';
 
 const Project = ({ title, company, logoSrc, description, imageSrc, imageOnRight }) => (
   <div style={{
