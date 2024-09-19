@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import ballImage from '../../public/images/image.png'; // Correctly import the image
+import ballImage from '../images/image.png'; // Correctly import the image
 
 const BouncingSoccerBall = () => {
   const sceneRef = useRef(null);
