@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import ballImage from '../../public/images/image.png'; // Correctly import the image
 
 const BouncingSoccerBall = () => {
   const sceneRef = useRef(null);
@@ -24,19 +25,29 @@ const BouncingSoccerBall = () => {
           }
         });
 
-        const ballSize = 40; // Increased size for better visibility
-        const ball = Bodies.circle(window.innerWidth / 2, window.innerHeight / 4, ballSize, {
-          restitution: 0.8,
-          friction: 0.005,
-          density: 0.001,
-          render: {
-            sprite: {
-              texture: 'https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sport-PNG/Soccer_Ball_Transparent_PNG_Clipart.png?m=1629815589',
-              xScale: ballSize / 256, // Adjust based on the actual image size
-              yScale: ballSize / 256
+        const ballSize = 40; // Size of each ball
+        const balls = []; // Array to hold multiple balls
+
+        // Create multiple soccer balls
+        for (let i = 0; i < 10; i++) {
+          const xPosition = Math.random() * (window.innerWidth - ballSize * 2) + ballSize;
+          const yPosition = Math.random() * (window.innerHeight - ballSize * 2) + ballSize;
+
+          const ball = Bodies.circle(xPosition, yPosition, ballSize, {
+            restitution: 0.8,
+            friction: 0.005,
+            density: 0.001,
+            render: {
+              sprite: {
+                texture: ballImage,
+                xScale: ballSize / 256,
+                yScale: ballSize / 256
+              }
             }
-          }
-        });
+          });
+
+          balls.push(ball); // Add the ball to the array
+        }
 
         // Make walls invisible
         const wallOptions = { 
@@ -46,12 +57,12 @@ const BouncingSoccerBall = () => {
           } 
         };
 
-        const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 60, wallOptions);
+        const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 30, window.innerWidth, 60, wallOptions);
         const leftWall = Bodies.rectangle(0, window.innerHeight / 2, 60, window.innerHeight, wallOptions);
         const rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 60, window.innerHeight, wallOptions);
         const ceiling = Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 60, wallOptions);
 
-        World.add(engine.world, [ball, ground, leftWall, rightWall, ceiling]);
+        World.add(engine.world, [...balls, ground, leftWall, rightWall, ceiling]); // Add all balls and walls to the world
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {
@@ -71,6 +82,12 @@ const BouncingSoccerBall = () => {
         const handleResize = () => {
           render.canvas.width = window.innerWidth;
           render.canvas.height = window.innerHeight;
+
+          // Update positions of static bodies on resize
+          Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight - 30 });
+          Matter.Body.setPosition(leftWall, { x: 0 + 30 , y: window.innerHeight / 2 });
+          Matter.Body.setPosition(rightWall, { x: window.innerWidth - 30 , y: window.innerHeight / 2 });
+          Matter.Body.setPosition(ceiling, { x: window.innerWidth / 2 , y: 30 });
         };
 
         window.addEventListener('resize', handleResize);

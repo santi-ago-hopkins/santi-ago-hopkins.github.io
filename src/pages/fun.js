@@ -16,7 +16,7 @@ const Fun = () => {
         textAlign: 'center',
         zIndex: 1 // Ensure the text is above the canvas
       }}>
-        Life's a game
+        trying not to take things too seriously :)
       </div>
     </div>
   );
