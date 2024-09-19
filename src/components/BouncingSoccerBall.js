@@ -31,7 +31,7 @@ const BouncingSoccerBall = () => {
           density: 0.001,
           render: {
             sprite: {
-              texture: 'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL3Jhd3BpeGVsX29mZmljZV8yM184LWJpdF9waXhlbF9hcnRfMmRfaXNfYV9mb290YmFsbF9waXhlbF9zaGFwZV82NTAwNzI4OS02MWNkLTQ2NDgtODFiOC05ODFiNmFiMjY1MDEucG5n.png', // New image link
+              texture: 'https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sport-PNG/Soccer_Ball_Transparent_PNG_Clipart.png?m=1629815589',
               xScale: ballSize / 256, // Adjust based on the actual image size
               yScale: ballSize / 256
             }
