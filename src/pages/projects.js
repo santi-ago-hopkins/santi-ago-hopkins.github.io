@@ -90,7 +90,7 @@ export default function Projects() {
         description="To complement the Autonomous Braking System, I spearheaded the design and development of an Autonomous Steering System. The MPC node would provide a steering angle to the mechanical systems node; from there, a powerful servo motor delivers the necessary torque on the steering column via a belt reduction. PID was implemented on top of the servo motor's internal controls but was effectively scrapped after both controllers resulted in excessive noise. The biggest challenge was ensuring compliance with FSAE Germany packaging rules; thus, a clever space-efficient mounting method was devised."
         logoSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARcVbhWvbH1Atxwqm3WeSHiJpuI79mws7_Q&s'
         imageOnRight={true}
-        imageSrc={<StaticImage src="../images/image2.png" alt="Autonomous Steering System" style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }} />}
+        imageSrc={<StaticImage src="../images/image2.PNG" alt="Autonomous Steering System" style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }} />}
       />
 
       <Project
