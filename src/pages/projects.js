@@ -78,7 +78,7 @@ export default function Projects() {
       <Project
         title="Autonomous Braking System"
         company="Formula Electric @ Berkeley"
-        description="As the first mechanical lead in the Autonomous subteam, I was tasked with creating a system that can mimic human braking. It took over a year, several iterations, and countless hours to bring this pneumatic-hydraulic system from concept to creation. The system can fully engage the disk brakes in under 500ms, providing upwards of 1kN of braking force. It is placed in parallel to the existing brake pedal, retaining driver capacities and thus allowing for safe testing procedures."
+        description="As the first mechanical lead in the Autonomous subteam, I was tasked with creating a system that can mimic human braking. It took over a year, several iterations, and countless hours to bring this pneumatic-hydraulic system from concept to creation. The system can fully engage the disk brakes in under 500ms, providing upwards of 1kN of braking force. It is placed in parallel to the existing brake pedal, retaining driver capacities and thus allowing for safe testing procedures.  Check out the Portfolio tab for more technical details!"
         logoSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARcVbhWvbH1Atxwqm3WeSHiJpuI79mws7_Q&s'
         imageOnRight={true}
         imageSrc={<StaticImage src="../images/image2.jpeg" alt="Autonomous Braking System" style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }} />}

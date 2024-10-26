@@ -16,7 +16,8 @@ const Fun = () => {
         textAlign: 'center',
         zIndex: 1 // Ensure the text is above the canvas
       }}>
-        trying not to take things too seriously :)
+        have an above average day! :D <br />
+        (maybe like 2-3 sigmas)
       </div>
     </div>
   );
