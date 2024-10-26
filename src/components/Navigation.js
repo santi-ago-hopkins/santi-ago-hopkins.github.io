@@ -46,7 +46,6 @@ const Navigation = () => {
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: 'white',
       padding: '10px',
       display: 'flex',
       marginLeft:'20vw',
