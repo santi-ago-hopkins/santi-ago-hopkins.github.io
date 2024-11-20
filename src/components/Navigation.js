@@ -56,7 +56,7 @@ const Navigation = () => {
       <NavLink to="/contact">Contact</NavLink>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/projects">Projects</NavLink>
-      <NavLink to="/pdfs/f1_santiago_hopkins_resume.pdf" isPdf>Resume</NavLink>
+      <NavLink to="/pdfs/m8_santiago_hopkins_resume.pdf" isPdf>Resume</NavLink>
       <NavLink to="/pdfs/santiago-hopkins_portfolio_oct2024.pdf" isPdf>Portfolio</NavLink>
       <NavLink to="/fun">For Fun</NavLink>
     </nav>
