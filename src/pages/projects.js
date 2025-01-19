@@ -76,18 +76,18 @@ export default function Projects() {
       }}></h1>
 
       <Project
-        title="Autonomous Braking System"
+        title="Autonomous Braking System "
         company="Formula Electric @ Berkeley"
-        description="As the first mechanical lead in the Autonomous subteam, I was tasked with creating a system that can mimic human braking. It took over a year, several iterations, and countless hours to bring this pneumatic-hydraulic system from concept to creation. The system can fully engage the disk brakes in under 500ms, providing upwards of 1kN of braking force. It is placed in parallel to the existing brake pedal, retaining driver capacities and thus allowing for safe testing procedures.  Check out the Portfolio tab for more technical details!"
+        description="As the first mechanical lead in the Autonomous subteam, I was tasked with creating a system that can mimic human braking. It took over a year, several iterations, and countless hours to bring this pneumatic-hydraulic system from concept to creation. The system can fully engage the disk brakes in under 500ms, providing upwards of 1kN of braking force. It is placed in parallel to the existing brake pedal, retaining driver capacities and thus allowing for safe testing procedures.  Check out the Drive-by-Wire Docs tab for more technical details!"
         logoSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARcVbhWvbH1Atxwqm3WeSHiJpuI79mws7_Q&s'
         imageOnRight={true}
         imageSrc={<StaticImage src="../images/image2.jpeg" alt="Autonomous Braking System" style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }} />}
       />
 
       <Project
-        title="Autonomous Steering System"
+        title="Autonomous Steering System "
         company="Formula Electric @ Berkeley"
-        description="To complement the Autonomous Braking System, I spearheaded the design and development of an Autonomous Steering System. The MPC node would provide a steering angle to the mechanical systems node; from there, a powerful servo motor delivers the necessary torque on the steering column via a belt reduction. PID was implemented on top of the servo motor's internal controls but was effectively scrapped after both controllers resulted in excessive noise. The biggest challenge was ensuring compliance with FSAE Germany packaging rules; thus, a clever space-efficient mounting method was devised."
+        description="To complement the Autonomous Braking System, I spearheaded the design and development of an Autonomous Steering System. The MPC node would provide a steering angle to the mechanical systems node; from there, a powerful servo motor delivers the necessary torque on the steering column via a belt reduction. PID was implemented on top of the servo motor's internal controls but was effectively scrapped after both controllers resulted in excessive noise. The biggest challenge was ensuring compliance with FSAE Germany packaging rules; thus, a clever space-efficient mounting method was devised. Check out the Drive-by-Wire Docs tab for more technical details!"
         logoSrc='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARcVbhWvbH1Atxwqm3WeSHiJpuI79mws7_Q&s'
         imageOnRight={true}
         imageSrc={<StaticImage src="../images/image2.PNG" alt="Autonomous Steering System" style={{ maxWidth: "100%", height: "auto", borderRadius: "5px" }} />}
