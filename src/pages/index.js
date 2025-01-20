@@ -30,9 +30,9 @@ export default function Home() {
           onComplete={() => setTitleComplete(true)}
         />
         <FlippingText 
-          text="a mechanical engineer and programmer making a difference in ________???"
+          text="a mechanical engineer and programmer making a difference in robotics"
           delay={titleComplete ? 0 : 1500}
-          highlightWords={['mechanical engineer', 'programmer', '________???']}
+          highlightWords={['mechanical engineer', 'programmer', 'robotics']}
           style={{
             fontSize: '1.5rem',
             color: '#333',
