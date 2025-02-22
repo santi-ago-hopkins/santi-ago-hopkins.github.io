@@ -54,7 +54,7 @@ const FlippingText = ({ text, style, onComplete, highlightWords = [], delay = 0 
             <span
               key={`highlight-${i}`}
               style={{
-                backgroundColor: isHighlighted ? '#55aaff' : 'transparent',
+                backgroundColor: isHighlighted ? '#5FB8D8' : 'transparent',
                 color: isHighlighted ? 'white' : 'inherit',
                 padding: isHighlighted ? '0 4px' : '0',
                 margin: isHighlighted ? '0 2px' : '0',

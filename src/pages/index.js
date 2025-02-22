@@ -22,8 +22,8 @@ export default function Home() {
         <FlippingText 
           text="Santiago Hopkins"
           style={{
-            fontSize: '6.5rem',
-            color: 'black',
+            fontSize: '4.5rem',
+            color: '#596475',
             fontFamily: 'soda_shake',
             fontWeight: 400,
           }}

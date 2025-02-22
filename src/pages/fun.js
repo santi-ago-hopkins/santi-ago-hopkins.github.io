@@ -7,17 +7,16 @@ const Fun = () => {
       <BouncingSoccerBall />
       <div style={{
         position: 'absolute',
-        top: '50%',
+        top: '40%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        color: 'black', // Change to your preferred color
+        color: 'purple', // Change to your preferred color
         fontSize: '2rem', // Adjust the size as needed
-        fontFamily: 'Montserrat, sans-serif',
+        fontFamily: 'soda_shake',
         textAlign: 'center',
         zIndex: 1 // Ensure the text is above the canvas
       }}>
-        have an above average day! :D <br />
-        (maybe like 2-3 sigmas)
+        i use arch
       </div>
     </div>
   );

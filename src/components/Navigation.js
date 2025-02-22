@@ -14,7 +14,7 @@ const Navigation = () => {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: '1rem',
       marginTop: '-10vh',
-      backgroundColor: location.pathname === to ? '#ff9e99' : 'transparent',
+      backgroundColor: location.pathname === to ? '#C3979F' : 'transparent',
     };
 
     if (isPdf) {
