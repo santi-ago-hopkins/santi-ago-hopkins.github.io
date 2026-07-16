@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'soda_shake';
-    src: url('Michelin\ Bold.ttf') format('opentype'),
+    src: url('Michelin\ Bold.ttf') format('truetype');
   }
 
 @keyframes flipIn {

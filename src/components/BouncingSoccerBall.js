@@ -10,6 +10,9 @@ const BouncingSoccerBall = () => {
       import('matter-js').then((Matter) => {
         const { Engine, Render, World, Bodies, Mouse, MouseConstraint, Runner } = Matter;
 
+        const containerWidth = sceneRef.current.clientWidth;
+        const containerHeight = sceneRef.current.clientHeight;
+
         const engine = Engine.create({
           gravity: { x: 0, y: 1 }
         });
@@ -18,8 +21,8 @@ const BouncingSoccerBall = () => {
           element: sceneRef.current,
           engine: engine,
           options: {
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: containerWidth,
+            height: containerHeight,
             wireframes: false,
             background: 'transparent'
           }
@@ -30,8 +33,8 @@ const BouncingSoccerBall = () => {
 
         // Create multiple soccer balls
         for (let i = 0; i < 10; i++) {
-          const xPosition = Math.random() * (window.innerWidth - ballSize * 2) + ballSize;
-          const yPosition = Math.random() * (window.innerHeight - ballSize * 2) + ballSize;
+          const xPosition = Math.random() * (containerWidth - ballSize * 2) + ballSize;
+          const yPosition = Math.random() * (containerHeight - ballSize * 2) + ballSize;
 
           const ball = Bodies.circle(xPosition, yPosition, ballSize, {
             restitution: 0.8,
@@ -57,10 +60,10 @@ const BouncingSoccerBall = () => {
           } 
         };
 
-        const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 30, window.innerWidth, 60, wallOptions);
-        const leftWall = Bodies.rectangle(0, window.innerHeight / 2, 60, window.innerHeight, wallOptions);
-        const rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 60, window.innerHeight, wallOptions);
-        const ceiling = Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 60, wallOptions);
+        const ground = Bodies.rectangle(containerWidth / 2, containerHeight - 30, containerWidth, 60, wallOptions);
+        const leftWall = Bodies.rectangle(0, containerHeight / 2, 60, containerHeight, wallOptions);
+        const rightWall = Bodies.rectangle(containerWidth, containerHeight / 2, 60, containerHeight, wallOptions);
+        const ceiling = Bodies.rectangle(containerWidth / 2, 0, containerWidth, 60, wallOptions);
 
         World.add(engine.world, [...balls, ground, leftWall, rightWall, ceiling]); // Add all balls and walls to the world
 
@@ -80,14 +83,16 @@ const BouncingSoccerBall = () => {
         Runner.run(runner, engine);
 
         const handleResize = () => {
-          render.canvas.width = window.innerWidth;
-          render.canvas.height = window.innerHeight;
+          const width = sceneRef.current.clientWidth;
+          const height = sceneRef.current.clientHeight;
+          render.canvas.width = width;
+          render.canvas.height = height;
 
           // Update positions of static bodies on resize
-          Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight - 30 });
-          Matter.Body.setPosition(leftWall, { x: 0 + 30 , y: window.innerHeight / 2 });
-          Matter.Body.setPosition(rightWall, { x: window.innerWidth - 30 , y: window.innerHeight / 2 });
-          Matter.Body.setPosition(ceiling, { x: window.innerWidth / 2 , y: 30 });
+          Matter.Body.setPosition(ground, { x: width / 2, y: height - 30 });
+          Matter.Body.setPosition(leftWall, { x: 0 + 30, y: height / 2 });
+          Matter.Body.setPosition(rightWall, { x: width - 30, y: height / 2 });
+          Matter.Body.setPosition(ceiling, { x: width / 2, y: 30 });
         };
 
         window.addEventListener('resize', handleResize);

@@ -1,47 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../fonts/fonts.css';
-import FlippingText from '../components/FlippingText';
 
 export default function Home() {
-  const [titleComplete, setTitleComplete] = useState(false);
-
   return (
-    <div style={{ 
-      display: 'flex',  
-      flexDirection: 'column',
-      minHeight: '100vh', 
-      width: '100vw', 
-      backgroundColor: 'white',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: '-10vh'
-    }}>
-      <div style={{
-        textAlign: 'center',
-      }}>
-        <FlippingText 
-          text="Santiago Hopkins"
-          style={{
-            fontSize: '4.5rem',
-            color: '#596475',
-            fontFamily: 'soda_shake',
-            fontWeight: 400,
-          }}
-          onComplete={() => setTitleComplete(true)}
-        />
-        <FlippingText 
-          text="a mechanical engineer and programmer making a difference in robotics"
-          delay={titleComplete ? 0 : 1500}
-          highlightWords={['mechanical engineer', 'programmer', 'robotics']}
-          style={{
-            fontSize: '1.5rem',
-            color: '#333',
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: '1rem',
-            lineHeight: '1.5',
-          }}
-          onComplete={() => {/* You can add a function here if needed */}}
-        />
+    <div className="container">
+      <div className="home-inner">
+        <h1 className="home-name">Santiago Hopkins</h1>
+        <p className="home-tagline">
+          a <span className="home-emphasis">mechanical engineer</span> and{' '}
+          <span className="home-emphasis">programmer</span> making a difference in{' '}
+          <span className="home-emphasis">robotics</span>
+        </p>
       </div>
     </div>
   );
