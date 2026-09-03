@@ -15,7 +15,7 @@ const config = {
   tagline: `mechanical engineering, robotics, etc.`,
 
   // Browser tab title on the home page. Other pages use "name — nav label".
-  siteTitle: `santeago`,
+  siteTitle: `Santiago Hopkins`,
 
   // Filename in src/images/ (leave empty to hide the portrait).
   // Generated from me.jpeg by scripts/crop-photo.js — see that file to re-run
@@ -44,7 +44,7 @@ const config = {
   // { label: `GitHub`, href: 'https://github.com/santiagohopkins' }
   links: [],
 
-  footer: `© 2025 Santiago Hopkins`,
+  footer: `© 2024 Santiago Hopkins`,
 
   // --------------------------------------------------------------------- nav
   // Order and labels of the top nav. Delete a line to remove that page.
