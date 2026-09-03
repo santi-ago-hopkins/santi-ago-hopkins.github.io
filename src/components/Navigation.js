@@ -1,43 +1,31 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'gatsby';
+import config from '../../site.config';
 
-const links = [
-  { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
-  { to: '/pdfs/m-santiago_hopkins_resume.pdf', label: 'Resume', isPdf: true },
-  { to: '/pdfs/santiago-hopkins_portfolio_jan2025.pdf', label: 'Portfolio', isPdf: true },
-  { to: '/pdfs/dbw-1.pdf', label: 'Drive-by-Wire Docs', isPdf: true },
-  { to: '/fun', label: 'For Fun' },
-];
+const normalize = (path) => path.replace(/\/+$/, '') || '/';
 
-const Navigation = () => {
-  const location = useLocation();
-
-  return (
-    <nav className="nav">
-      <div className="nav-inner">
-        {links.map(({ to, label, isPdf }) => {
-          const isActive = !isPdf && location.pathname === to;
-          const className = `nav-link${isActive ? ' active' : ''}`;
-
-          if (isPdf) {
-            return (
-              <a key={to} href={to} target="_blank" rel="noopener noreferrer" className={className}>
-                {label}
-              </a>
-            );
-          }
-
-          return (
-            <Link key={to} to={to} className={className}>
-              {label}
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
-  );
+// A nav entry is active on its own page and on anything nested under it, so a
+// blog post keeps "Blog" highlighted.
+const isActive = (pathname, path) => {
+  const here = normalize(pathname);
+  const target = normalize(path);
+  return target === '/' ? here === '/' : here === target || here.startsWith(`${target}/`);
 };
+
+const Navigation = ({ pathname }) => (
+  <nav className="nav">
+    <div className="nav-inner">
+      {config.nav.map(({ path, label }) => (
+        <Link
+          key={path}
+          to={path}
+          className={`nav-link${isActive(pathname, path) ? ' active' : ''}`}
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
+  </nav>
+);
 
 export default Navigation;
