@@ -25,7 +25,7 @@ const config = {
   // Intro text on the home page. Press Enter twice for a new paragraph,
   // once for a single line break. Indentation is ignored.
   bio: [
-    `Hey! I just graduated from Berkeley a bit more than a year ago and am now building things full time at Zoox in SF.  My main interest lies in acutuator design on both a mechanical and system level. 
+    `Hey! I just graduated from Berkeley a bit more than a year ago and am now building things full time at Zoox in SF.  My main interest lies in actuator design on both a mechanical and system level. 
     
     I find it particularly interesting how humans get around a city and yearn for the time where self-driving vehicles have largely replaced car owernship.
     
