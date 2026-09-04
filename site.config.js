@@ -68,7 +68,7 @@ const config = {
     {
       title: `B.S. Mechanical Engineering`,
       company: `University of California, Berkeley`,
-      dates: `May 2025`,
+      dates: `Aug 2021 - May 2025`,
     },
     {
       title: `Robotics Engineering Intern`,
@@ -81,7 +81,7 @@ const config = {
       dates: `May 2024 – Aug 2024`,
     },
     {
-      title: `Engineering Intern`,
+      title: `Mechanical Engineering Intern`,
       company: `World Surf League`,
       dates: `May 2023 – Dec 2023`,
     },
